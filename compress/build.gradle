@@ -1,13 +1,5 @@
 apply plugin: 'com.android.library'
-
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
-    }
-}
+apply plugin: 'maven-publish'
 
 android {
     compileSdkVersion 33
@@ -30,6 +22,15 @@ ext {
     PUBLISH_ARTIFACT_ID = "compress"
 }
 
-apply from: '../publish.gradle'
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+            }
+        }
+    }
+}
+
+//apply from: '../publish.gradle'
 
 dependencies {}
