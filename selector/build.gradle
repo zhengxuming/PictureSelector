@@ -1,5 +1,7 @@
-apply plugin: 'com.android.library'
-apply plugin: 'maven-publish'
+plugins {
+    id 'com.android.library'
+    id 'maven-publish'
+}
 
 android {
     compileSdkVersion 33
@@ -40,7 +42,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.luck.pictureselector'
                 artifactId = 'selector'
-                version = 'v2.1'
+                version = 'v2.2'
             }
         }
     }
