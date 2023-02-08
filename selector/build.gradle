@@ -37,6 +37,10 @@ afterEvaluate {
     publishing {
         publications {
             release(MavenPublication) {
+                from components.release
+                groupId = 'com.luck.pictureselector'
+                artifactId = 'selector'
+                version = 'v2.1'
             }
         }
     }
